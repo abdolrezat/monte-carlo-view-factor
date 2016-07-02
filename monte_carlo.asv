@@ -1,0 +1,34 @@
+function F12 = monte_carlo(r1,r2,L)
+total = 1000000;
+z = zeros(1,total); %set to number of parameters
+for i=1:length(z)
+%% processing
+z(1,i) = f_line(r1,r2,L);
+%% end of processing
+end
+
+%count and divide by total
+hit_rate = nnz(z(1,:)==1)/total
+error_ = (hit_rate - analytical_values(r1,r2,L))*100/analytical_values(r1,r2,L);
+
+if(abs(error_)<5)
+    fprintf('error between simulated and analytical values :'); cprintf('comment','%%%f\n',error_);
+else
+    fprintf('error between simulated and analytical values :'); cprintf('err','%%%f\n',error_);
+end
+%show results
+%% see the hit points on the upper surface
+% j=1;
+% for i=1:total
+% if(z(1,i) == 1)
+% M(:,j) = [z(2,i),z(3,i)];
+% j = j+1;
+% end
+% end
+% plot(M(1,:),M(2,:))
+%%
+%% See the Direction vectors
+% co = 1000;
+% plot3(z(4,1:co),z(5,1:co),z(6,1:co),'.');
+%%
+toc
