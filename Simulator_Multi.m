@@ -4,6 +4,7 @@ L = 1;
 rangeL_r1 = 0:0.01:10;
 total = 5000000;
 r2_L = [0.3,0.4,0.6,0.8,1.0,1.25,1.5,2,3,4,5,6,8];
+CORE = cell(2,length(r2_L));
 parfor i = 1:length(r2_L)
     [MCarlo,Analytic] = Simulator_single(rangeL_r1,r2_L(i),L,total);
     CORE(:,i) = {MCarlo,Analytic};
