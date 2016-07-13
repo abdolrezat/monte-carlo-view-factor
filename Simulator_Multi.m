@@ -1,12 +1,16 @@
+%% this Script Simulates and plots altogether view factor curves 
+tic
 %
 L = 1;
-rangeL_r1 = 0:0.5:10;
-total = 700000;
+rangeL_r1 = [0:0.01:1,1.02:0.03:2,2.05:0.05:4,4.1:0.5:10];
+total = 80000;
 r2_L = [0.3,0.4,0.6,0.8,1.0,1.25,1.5,2,3,4,5,6,8];
 % CORE = cell(2,length(r2_L));
 parfor i = 1:length(r2_L)
+    tic
     [MCarlo,Analytic] = Simulator_single(rangeL_r1,r2_L(i),L,total);
     CORE(:,i) = {MCarlo,Analytic};
+    toc
 end
 %save variables to file
 save('Cylindrical_Results');
