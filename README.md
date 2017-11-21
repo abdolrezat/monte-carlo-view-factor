@@ -1,10 +1,9 @@
 
-<p align="center"><img width=60% src="http://images.slideplayer.com/27/8968287/slides/slide_31.jpg"></p>
-
 # Monte Carlo Simulation for Radiation View Factors of Two Geometries ![MATLAB](https://img.shields.io/badge/MATLAB-all%20versions-orange.svg)
 
 Between two objects, the proportion of the radiation that leaves one object and hits the other object, is called the [Radiation View Factor](https://en.wikipedia.org/wiki/View_factor). There are a variety of techniques to calculate the view factor of an object with respect to another. Some references contain analytic methods for certain geometries, while others investigate the use of numerical methods for more complex geometries. In this code, the [Monte Carlo Method](https://en.wikipedia.org/wiki/Monte_Carlo_method
 ) is used to simulate emissions, and to compute the view factors. More specifically, this code runs a Monte Carlo simulation for a 3D geometry of two co-axial parallel disks, then plots the results and compares them with the actual (analytic) values presented in references, and observes the relationship of errors and radii of each disk.
+<p align="center"><img width=50% src="http://images.slideplayer.com/27/8968287/slides/slide_31.jpg"></p>
 
 ## Running the tests
 MATLAB is required in order to run the scripts, works with all versions of MATLAB.
